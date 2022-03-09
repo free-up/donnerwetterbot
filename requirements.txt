@@ -1,1 +1,2 @@
-dwbot
+telebot
+pyowm
