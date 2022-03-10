@@ -8,7 +8,9 @@ config_dict = get_config_from('defo.json')
 owm = OWM('8e73d515dcfe39452a17e88b4fc00e51', config_dict)
 mgr = owm.weather_manager()
 
-.listen(process.env.PORT || 5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
 
 
 
