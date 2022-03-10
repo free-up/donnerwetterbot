@@ -1,3 +1,4 @@
 telebot
 pyowm
 gunicorn
+favicon
