@@ -14,7 +14,7 @@ mgr = owm.weather_manager()
 
 
 
-bot = telebot.TeleBot("5122770218:AAH7S776q9_0mmzimMinvVrmt5-qvxmjhX0")#, parse_mode=None)
+bot = telebot.TeleBot("5122770218:AAH7S776q9_0mmzimMinvVrmt5-qvxmjhX0", parse_mode=None)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
