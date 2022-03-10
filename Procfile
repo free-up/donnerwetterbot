@@ -1,1 +1,1 @@
-web: gunicorn app:dwbot
+web: python dwbot.py
