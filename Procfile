@@ -1,1 +1,1 @@
-web: python dwbot.py thin start -p $PORT
+app: python dwbot.py thin start -p $PORT
