@@ -1,1 +1,1 @@
-npm start:dwbot.py
+web: npm start:dwbot.py
