@@ -9,8 +9,9 @@ owm = OWM('8e73d515dcfe39452a17e88b4fc00e51', config_dict)
 mgr = owm.weather_manager()
 
 import favicon
-server.use(favicon(path.join(__dirname, "../assets/images/favicon.ico")))
 
+icons = favicon.get('https://www.python.org/')
+icon = icons[0]
 
 
 
