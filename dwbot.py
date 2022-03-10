@@ -14,11 +14,11 @@ mgr = owm.weather_manager()
 
 
 
-bot = telebot.TeleBot("5122770218:AAH7S776q9_0mmzimMinvVrmt5-qvxmjhX0", parse_mode=None)
+bot = telebot.TeleBot("5122770218:AAH7S776q9_0mmzimMinvVrmt5-qvxmjhX0")#, parse_mode=None)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-	bot.reply_to(message, "Я погодный бот. В каком городе или стране смотрим погоду?")
+	bot.reply_to(message, "Я погодный бот. В каком городе смотрим погоду?")
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
 	observation = mgr.weather_at_place( message.text )
