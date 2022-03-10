@@ -1,1 +1,1 @@
-web: npm start:dwbot.py
+web: gunicorn dwbot.py
