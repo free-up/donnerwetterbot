@@ -17,7 +17,7 @@ bot = telebot.TeleBot("5122770218:AAH7S776q9_0mmzimMinvVrmt5-qvxmjhX0", parse_mo
 
 @bot.message_handler(commands=['start', 'pogoda'])
 def send_welcome(message):
-	bot.reply_to(message, "Я погодный бот. В каком городе смотрим погоду?")
+	bot.reply_to(message, "Я погодный бот. В каком городе смотрим погоду? Используйте символ $ перед названием города.")
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
 	city = message.text
