@@ -20,14 +20,17 @@ def send_welcome(message):
 	bot.reply_to(message, "Я погодный бот. В каком городе смотрим погоду?")
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-	observation = mgr.weather_at_place( message.text )
-	w = observation.weather
-	temp = w.temperature('celsius')["temp"]
-	hum = w.humidity
-	clo = w.detailed_status	
-	answer =  "В городе " + message.text + " " +clo + "\n"
-	answer += "Температура за окном " + str(temp) + "°C, " + "\n"
-	answer += "Относительная влажность " + str(hum) + "%" + "\n"
-	bot.reply_to(message, answer)
+	city = message.text
+	if city.startswith("$"):
+		city = city[1:]
+		observation = mgr.weather_at_place( city )
+		w = observation.weather
+		temp = w.temperature('celsius')["temp"]
+		hum = w.humidity
+		clo = w.detailed_status	
+		answer =  "В городе " + city + " " +clo + "\n"
+		answer += "Температура за окном " + str(temp) + "°C, " + "\n"
+		answer += "Относительная влажность " + str(hum) + "%" + "\n"
+		bot.reply_to(message, answer)
 
 bot.infinity_polling()
