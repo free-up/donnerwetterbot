@@ -5,8 +5,8 @@ from pyowm.utils import timestamps
 from pyowm.utils.config import get_config_from
 import json
 config_dict = get_config_from('defo.json')
-api = json.loads('api_key')
-owm = OWM(api, config_dict)
+#api = json.load('api_key')
+owm = OWM('8e73d515dcfe39452a17e88b4fc00e51', config_dict)
 mgr = owm.weather_manager()
 
 
